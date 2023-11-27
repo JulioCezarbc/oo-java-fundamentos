@@ -8,16 +8,17 @@ public class program {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        product produto = new product();
+
 
         System.out.println("Informe o produto: ");
-        produto.name = entrada.next();
+        String name = entrada.next();
 
         System.out.println("Informe o preço: ");
-        produto.price = entrada.nextDouble();
+        double price = entrada.nextDouble();
 
         System.out.println("Informe a quantidade: ");
-        produto.quantity = entrada.nextInt();
+        int quantity = entrada.nextInt();
+        product produto = new product(name,price,quantity);
 
 
         System.out.println();
@@ -25,7 +26,7 @@ public class program {
         System.out.println();
 
         System.out.println("Informe o numero de produtos, para ser adicionado no estoque! ");
-        int quantity = entrada.nextInt();
+        quantity = entrada.nextInt();
         produto.addProduct(quantity);
 
         System.out.println();
