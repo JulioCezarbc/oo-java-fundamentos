@@ -15,10 +15,11 @@ public class program {
 
         System.out.println("Informe o preço: ");
         double price = entrada.nextDouble();
+        product produto = new product(name,price);
 
-        System.out.println("Informe a quantidade: ");
-        int quantity = entrada.nextInt();
-        product produto = new product(name,price,quantity);
+//        System.out.println("Informe a quantidade: ");
+//        int quantity = entrada.nextInt();
+//        product produto = new product(name,price,quantity);
 
 
         System.out.println();
@@ -26,7 +27,7 @@ public class program {
         System.out.println();
 
         System.out.println("Informe o numero de produtos, para ser adicionado no estoque! ");
-        quantity = entrada.nextInt();
+        int quantity = entrada.nextInt();
         produto.addProduct(quantity);
 
         System.out.println();
