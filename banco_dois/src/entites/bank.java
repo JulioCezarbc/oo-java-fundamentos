@@ -20,8 +20,7 @@ public class bank {
         this.numeroConta = gerarNumeroConta();
     }
 
-    public bank(int numeroConta, String nome, LocalDate dataNascimento) {
-        this.numeroConta = numeroConta;
+    public bank(String nome, LocalDate dataNascimento) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
     }
