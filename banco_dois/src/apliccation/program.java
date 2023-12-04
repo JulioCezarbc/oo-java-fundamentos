@@ -26,7 +26,6 @@ public class program {
             System.out.println("Informe o deposito inicial: ");
             double dep = entrada.nextDouble();
             inf = new bank(name,dataNascimento,dep);
-
         }
         else {
             inf = new bank(name,dataNascimento);
