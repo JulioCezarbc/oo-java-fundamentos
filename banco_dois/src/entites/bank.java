@@ -49,7 +49,6 @@ public class bank {
         }
         return idade;
     }
-
     public String toString() {
         return "\nNome: " + getNome() +
                 "\nIdade: " + calcularIdade() +
