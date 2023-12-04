@@ -1,7 +1,5 @@
 package apliccation;
-
 import entites.bank;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 
