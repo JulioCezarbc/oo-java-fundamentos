@@ -1,4 +1,4 @@
-package entites;
+package Model;
 
 public class Moto extends AutoMovel{
     public Moto(String nomeMarca, String nomeModelo, String placa) {

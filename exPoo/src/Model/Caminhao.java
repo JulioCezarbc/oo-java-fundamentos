@@ -1,4 +1,4 @@
-package entites;
+package Model;
 
 public class Caminhao extends AutoMovel {
     private double carga;

@@ -1,4 +1,4 @@
-package entites;
+package Model;
 
 public class AutoMovel {
     private String NomeMarca;
