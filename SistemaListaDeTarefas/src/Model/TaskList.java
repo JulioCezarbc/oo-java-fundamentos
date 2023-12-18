@@ -41,14 +41,20 @@ public class TaskList {
         System.out.println("----------------------");
     }
     public void tarefaConcluida() {
-        System.out.print("Informe o índice da tarefa a ser marcada como concluída: ");
-        int indice = entrada.nextInt();
-        indice--;
-        if (indice >= 0 && indice < listaTask.size()) {
-            listaTask.get(indice).taskCompletada();
-            System.out.println("Tarefa marcada como concluída com sucesso!");
-        } else {
-            System.out.println("Índice de tarefa inválido!");
+        try {
+            System.out.print("Informe o índice da tarefa a ser marcada como concluída: ");
+            int indice = entrada.nextInt();
+            entrada.nextLine();
+            indice--;
+
+            if (indice >= 0 && indice < listaTask.size()) {
+                listaTask.get(indice).taskCompletada();
+                System.out.println("Tarefa marcada como concluída com sucesso!");
+            } else {
+                System.out.println("Índice de tarefa inválido! Tente novamente.");
+            }
+        } catch (Exception e) {
+            System.out.println("Erro: Entrada inválida. Certifique-se de inserir um número.");
         }
     }
     private boolean validarApenasLetras(String input) {
