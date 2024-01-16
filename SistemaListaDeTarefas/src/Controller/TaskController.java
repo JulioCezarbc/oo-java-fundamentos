@@ -1,54 +1,36 @@
 package Controller;
+
 import Model.TaskList;
 import View.TaskView;
-import java.util.Scanner;
 
 public class TaskController {
-    private final Scanner scanner;
-    private final TaskList taskList;
-    private final TaskView taskView;
 
+    private TaskList taskList;
+    private TaskView taskView;
+
+    public TaskController(TaskList taskList, TaskView taskView) {
+        this.taskList = taskList;
+        this.taskView = taskView;
+    }
     public TaskController() {
-        this.scanner = new Scanner(System.in);
         this.taskList = new TaskList();
-        this.taskView = new TaskView(taskList);
+        this.taskView = null;  // TaskView será configurado posteriormente com setTaskView
+    }
+    public void setTaskView(TaskView taskView) {
+        this.taskView = taskView;
+    }
+    public void iniciar(){
+        this.taskView = taskView;
+        taskView.start();
+    }
+    public void adicionarTarefa(){
+        taskList.adicionarTarefa();
+    }
+    public void listaDeTarefas(){
+        taskList.listaDeTarefas();
+    }
+    public void tarefaConcluida(){
+        taskList.tarefaConcluida();
     }
 
-    public void start(){
-        int escolha;
-
-        do {
-            taskView.menu();
-            escolha = getChoiceFromUser();
-
-            switch (escolha) {
-                case 1 -> taskList.adicionarTarefa();
-                case 2 -> taskList.listaDeTarefas();
-                case 3 -> taskList.tarefaConcluida();
-                case 4 -> System.out.println("Saindo...");
-                default -> System.out.println("Opção inválida");
-            }
-            try {
-                Thread.sleep(1800);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }while (escolha != 4);
-    }
-
-    public int getChoiceFromUser() {
-
-        try {
-            return scanner.nextInt();
-        } catch (Exception e) {
-            // Em caso de entrada inválida, limpe a memória temporaria e retorne um valor inválido
-            scanner.nextLine();
-            return -1; // ou outro valor padrão, dependendo do que fizer sentido para o seu programa
-        }
-    }
-
-    public static void main(String[] args) {
-        TaskController taskController = new TaskController();
-        taskController.start();
-    }
 }
